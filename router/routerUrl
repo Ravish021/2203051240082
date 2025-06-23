@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+
+
+const sortUrl = require('../controllers/shorturl');
+const logger = require('../middlewares/logger');
+
+// POST route for creating short URLs
+router.post('/shorturls', sortUrl.shorturls);  
+// GET route for retrieving a short URL
+router.get('/shorturls/:shortcode', sortUrl.getShortUrl);
+
+module.exports = router;
